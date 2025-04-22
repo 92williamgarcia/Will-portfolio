@@ -16,6 +16,7 @@
     p.subtitle { margin-top: 10px; font-size: 1.3rem; color: #ccc; }
     .btn { margin-top: 20px; padding: 10px 20px; background-color: #1CE783; color: #121212; border: none; cursor: pointer; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 10px #1CE783; }
     .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px #1CE783; }
+    .link-btn { position: fixed; bottom: 80px; right: 20px; z-index: 99; background-color: #0e0e0e; color: #1CE783; border: 2px solid #1CE783; }
     section { padding: 60px 40px; }
     h2.section-title { margin-bottom: 30px; font-size: 2rem; border-left: 4px solid #1CE783; padding-left: 10px; color: #1CE783; text-shadow: 0 0 10px #1CE783; }
     .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
@@ -28,14 +29,8 @@
       h1 { font-size: 2.5rem; }
       header { padding: 20px; align-items: center; }
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   </style>
 </head>
 <body>
@@ -68,6 +63,26 @@
     </div>
   </section>
 
+  <section id="websites">
+    <h2 class="section-title">Websites I’ve Created</h2>
+    <div class="cards">
+      <a class="card" href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank">
+        Temple Meditation Trail<br><small>Interactive guide to the Fo Guang Shan walking trail</small>
+      </a>
+      <a class="card" href="https://92williamgarcia.github.io/LVPPS/" target="_blank">
+        Portable Power Supply Site<br><small>Product overview, image gallery, and demo video</small>
+      </a>
+      <div class="card">
+        <h3>ZephSec AI Dashboard</h3>
+        <p>A security-focused AI tool with real-time threat logs, animated UI, and report generation features.</p>
+      </div>
+      <div class="card">
+        <h3>Silent Harvester</h3>
+        <p>A GPT-powered backend system that extracts structure from chaotic inputs like thoughts, data, and content for deep productivity workflows.</p>
+      </div>
+    </div>
+  </section>
+
   <section>
     <h2 class="section-title">About Me</h2>
     <p>I'm Will Garcia—Senior Controls Tech, AI workflow architect, and creative systems builder. With a deep background in BAS and a passion for generative AI, I design intelligent systems that optimize tech and amplify human impact. From HVAC logic to AI-powered social automation, my work fuses precision with purpose.</p>
@@ -81,8 +96,9 @@
     </div>
   </footer>
 
-  <audio id="bg-music" src="bg-music.mp3" loop></audio>
+  <audio id="bg-music" src="bg-music.mp3" preload="auto" loop></audio>
   <button id="music-toggle" class="btn">Play Music</button>
+  <a href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank" class="btn link-btn">Temple Trail</a>
 
   <script>
     const music = document.getElementById('bg-music');
@@ -95,14 +111,12 @@
         toggle.textContent = 'Play Music';
         toggle.style.backgroundColor = '#1CE783';
       } else {
-        music.play();
+        music.play().catch(e => console.log('Playback blocked:', e));
         toggle.textContent = 'Pause Music';
         toggle.style.backgroundColor = '#0e0e0e';
       }
       isPlaying = !isPlaying;
     });
-
-    music.pause();
   </script>
 </body>
 </html>
