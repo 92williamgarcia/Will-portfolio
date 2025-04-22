@@ -4,20 +4,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Will Garcia - Personal Hulu UI</title>
+  <title>Will Garcia - Vibe Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background-color: #0e0e0e; color: #ffffff; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at center, #0e0e0e 0%, #121212 100%);
+      color: #ffffff;
+      scroll-behavior: smooth;
+      transition: background 2s ease-in-out;
+    }
     header, section, footer { padding: 60px 40px; }
-    .btn, .card { background: #181818; border: none; border-radius: 10px; padding: 20px; color: white; box-shadow: 0 0 10px rgba(28, 231, 131, 0.2); transition: all 0.2s; text-align: center; }
-    .btn:hover, .card:hover { transform: scale(1.05); box-shadow: 0 0 20px #1CE783; }
-    .btn { margin: 20px; background-color: #1CE783; color: #121212; font-weight: bold; }
-    .link-btn { position: fixed; bottom: 80px; right: 20px; z-index: 99; background-color: #0e0e0e; color: #1CE783; border: 2px solid #1CE783; }
-    h1, h2, h3 { color: #1CE783; text-shadow: 0 0 10px #1CE783; }
-    h2.section-title { border-left: 4px solid #1CE783; padding-left: 10px; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+    .btn, .card {
+      background: #181818;
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      box-shadow: 0 0 10px rgba(28, 231, 131, 0.2);
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .btn:hover, .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #1CE783;
+    }
+    .btn {
+      margin: 20px;
+      background-color: #1CE783;
+      color: #121212;
+      font-weight: bold;
+    }
+    #vibe-toggle {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 99;
+      font-weight: bold;
+      background: #121212;
+      color: #1CE783;
+      border: 2px solid #1CE783;
+      box-shadow: 0 0 10px #1CE783;
+    }
+    h1, h2, h3 {
+      color: #1CE783;
+      text-shadow: 0 0 10px #1CE783;
+    }
+    h2.section-title {
+      border-left: 4px solid #1CE783;
+      padding-left: 10px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+    }
   </style>
 </head>
 <body>
@@ -30,39 +73,11 @@
   <section id="featured">
     <h2 class="section-title">Featured Work</h2>
     <div class="cards">
-      <a class="card" href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:15145f6b-e65e-4f9f-ad12-6296d3df5d64" target="_blank">Sr. Controls Tech – Trane</a>
-      <a class="card" href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:67471b0f-855b-45b9-84fb-8221767ef417" target="_blank">Smart Automation Projects</a>
       <a class="card" href="https://a.co/d/bZ2eckm" target="_blank">The Will to Heal (Book)</a>
-      <a class="card" href="#ai-agents">AI Agent Design Portfolio</a>
-      <a class="card" href="https://a.co/d/9qAHlNl" target="_blank">Triple Gem Ceremony<br><small>Linked to Will’s modern Dharma book for young seekers – practical Buddhist wisdom in a fresh voice.</small></a>
-    </div>
-  </section>
-
-  <section id="ai-agents">
-    <h2 class="section-title">AI Agent Design Portfolio</h2>
-    <div class="cards">
-      <div class="card"><h3>Smart Assistant Bot</h3><p>Automates FAQs and workflows using GPT + Python + Zapier.</p></div>
-      <div class="card"><h3>Instagram Auto Poster</h3><p>AI-generated quote graphics, emotion analysis, and auto-reply logic.</p></div>
-      <div class="card"><h3>HVAC Report Generator</h3><p>Pulls BAS data and builds reports using AI templating tools.</p></div>
-      <div class="card"><h3>Voice-Activated Tech Agent</h3><p>Custom Tracer SC+ voice interface for live system controls.</p></div>
-    </div>
-  </section>
-
-  <section id="websites">
-    <h2 class="section-title">Websites I’ve Created</h2>
-    <div class="cards">
-      <a class="card" href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank">Temple Meditation Trail<br><small>Interactive guide to the Fo Guang Shan walking trail</small></a>
-      <a class="card" href="https://92williamgarcia.github.io/LVPPS/" target="_blank">Portable Power Supply Site<br><small>Product overview, image gallery, and demo video</small></a>
+      <a class="card" href="https://a.co/d/9qAHlNl" target="_blank">Triple Gem Ceremony<br><small>Linked to Will’s modern Dharma book for young seekers</small></a>
       <a class="card" href="https://westcoastconnectedinc.com/" target="_blank">West Coast Connected – Electrical Services</a>
       <a class="card" href="https://92williamgarcia.github.io" target="_blank">Will Garcia – Portfolio & Projects</a>
-      <div class="card"><h3>ZephSec AI Dashboard</h3><p>A security-focused AI tool with real-time threat logs, animated UI, and report generation features.</p></div>
-      <div class="card"><h3>Silent Harvester</h3><p>A GPT-powered backend system that extracts structure from chaotic inputs like thoughts, data, and content for deep productivity workflows.</p></div>
     </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">About Me</h2>
-    <p>I'm Will Garcia—Senior Controls Tech, AI workflow architect, and creative systems builder. With a deep background in BAS and a passion for generative AI, I design intelligent systems that optimize tech and amplify human impact. From HVAC logic to AI-powered social automation, my work fuses precision with purpose.</p>
   </section>
 
   <footer>
@@ -73,22 +88,31 @@
     </div>
   </footer>
 
-  <audio id="netflix-sound" src="netflix-sound.mp3" preload="auto"></audio>
+  <audio id="vibe-music" src="secret-garden.mp3" preload="auto" loop></audio>
+  <button id="vibe-toggle" class="btn">VIBE OUT</button>
 
   <script>
-    const tudum = document.getElementById('netflix-sound');
+    const music = document.getElementById('vibe-music');
+    const vibeToggle = document.getElementById('vibe-toggle');
+    let playing = false;
 
-    // Play sound on page load
-    window.addEventListener('DOMContentLoaded', () => {
-      tudum.play().catch(e => console.log("Autoplay blocked on load"));
+    vibeToggle.addEventListener('click', () => {
+      if (playing) {
+        music.pause();
+        vibeToggle.textContent = 'VIBE OUT';
+        document.body.style.background = 'radial-gradient(circle at center, #0e0e0e 0%, #121212 100%)';
+      } else {
+        music.play().catch(e => console.log('Playback blocked:', e));
+        vibeToggle.textContent = 'PAUSE VIBE';
+        document.body.style.background = 'radial-gradient(circle at center, #0e0e0e 0%, #1CE783 60%, #121212 100%)';
+      }
+      playing = !playing;
     });
 
-    // Play sound on any hyperlink click
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        tudum.currentTime = 0;
-        tudum.play().catch(e => console.log("Autoplay blocked on click"));
-      });
+    // Subtle lightshow as you scroll
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY % 255;
+      document.body.style.background = `radial-gradient(circle at center, #0e0e0e 0%, rgb(${scrollY},255,200) 60%, #121212 100%)`;
     });
   </script>
 </body>
