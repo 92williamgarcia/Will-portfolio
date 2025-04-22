@@ -196,17 +196,17 @@
   <button id="vibe-toggle" class="btn">VIBE OUT</button>
 
   <script>
-    const music = document.getElementById('vibe-music');
+    const vibeAudio = document.getElementById('vibe-music');
     const vibeToggle = document.getElementById('vibe-toggle');
     let playing = false;
 
     vibeToggle.addEventListener('click', () => {
       if (playing) {
-        music.pause();
+        vibeAudio.pause();
         vibeToggle.textContent = 'VIBE OUT';
         document.body.style.background = 'radial-gradient(circle at center, #0e0e0e 0%, #121212 100%)';
       } else {
-        music.play().catch(e => console.log('Playback blocked:', e));
+        vibeAudio.play().catch(e => console.log('Playback blocked:', e));
         vibeToggle.textContent = 'PAUSE VIBE';
       }
       playing = !playing;
@@ -220,18 +220,18 @@
   </script>
 
   <script>
-    const music = document.getElementById('vibe-music');
+    const vibeAudio = document.getElementById('vibe-music');
     const vibeToggle = document.getElementById('vibe-toggle');
     const body = document.body;
     let playing = false;
 
     vibeToggle.addEventListener('click', () => {
       if (playing) {
-        music.pause();
+        vibeAudio.pause();
         vibeToggle.textContent = 'VIBE OUT';
         body.classList.remove('vibe-lightshow');
       } else {
-        music.play().catch(e => console.log('Playback blocked:', e));
+        vibeAudio.play().catch(e => console.log('Playback blocked:', e));
         vibeToggle.textContent = 'PAUSE VIBE';
         body.classList.add('vibe-lightshow');
       }
