@@ -10,36 +10,22 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background-color: #0e0e0e; color: #ffffff; scroll-behavior: smooth; }
-    header { background: #121212; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 50px; position: relative; animation: fadeIn 2s ease-in; }
-    .header-content { z-index: 2; animation: slideUp 2s ease-in-out; }
-    h1 { font-size: 4rem; font-weight: 700; color: #1CE783; text-shadow: 0 0 20px #1CE783; }
-    p.subtitle { margin-top: 10px; font-size: 1.3rem; color: #ccc; }
-    .btn { margin-top: 20px; padding: 10px 20px; background-color: #1CE783; color: #121212; border: none; cursor: pointer; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 10px #1CE783; }
-    .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px #1CE783; }
+    header, section, footer { padding: 60px 40px; }
+    .btn, .card { background: #181818; border: none; border-radius: 10px; padding: 20px; color: white; box-shadow: 0 0 10px rgba(28, 231, 131, 0.2); transition: all 0.2s; text-align: center; }
+    .btn:hover, .card:hover { transform: scale(1.05); box-shadow: 0 0 20px #1CE783; }
+    .btn { margin: 20px; background-color: #1CE783; color: #121212; font-weight: bold; }
     .link-btn { position: fixed; bottom: 80px; right: 20px; z-index: 99; background-color: #0e0e0e; color: #1CE783; border: 2px solid #1CE783; }
-    section { padding: 60px 40px; }
-    h2.section-title { margin-bottom: 30px; font-size: 2rem; border-left: 4px solid #1CE783; padding-left: 10px; color: #1CE783; text-shadow: 0 0 10px #1CE783; }
+    h1, h2, h3 { color: #1CE783; text-shadow: 0 0 10px #1CE783; }
+    h2.section-title { border-left: 4px solid #1CE783; padding-left: 10px; }
     .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
-    .card { background: #181818; padding: 20px; border-radius: 10px; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: white; text-align: center; box-shadow: 0 0 10px rgba(28, 231, 131, 0.2); }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 0 25px #1CE783; }
-    footer { padding: 30px; text-align: center; background-color: #181818; }
-    .social-links a { margin: 0 15px; color: #1CE783; text-decoration: none; font-weight: 600; text-shadow: 0 0 5px #1CE783; }
     #music-toggle { position: fixed; bottom: 20px; right: 20px; z-index: 99; }
-    @media (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      header { padding: 20px; align-items: center; }
-    }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   </style>
 </head>
 <body>
   <header>
-    <div class="header-content">
-      <h1>WILL GARCIA</h1>
-      <p class="subtitle">Creator. Leader. Rebuilder. Tech & Heart Combined.</p>
-      <button class="btn" onclick="document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });">Explore My Journey</button>
-    </div>
+    <h1>WILL GARCIA</h1>
+    <p class="subtitle">Creator. Leader. Rebuilder. Tech & Heart Combined.</p>
+    <button class="btn" onclick="document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });">Explore My Journey</button>
   </header>
 
   <section id="featured">
@@ -49,7 +35,7 @@
       <a class="card" href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:67471b0f-855b-45b9-84fb-8221767ef417" target="_blank">Smart Automation Projects</a>
       <a class="card" href="https://a.co/d/bZ2eckm" target="_blank">The Will to Heal (Book)</a>
       <a class="card" href="#ai-agents">AI Agent Design Portfolio</a>
-      <div class="card">Triple Gem Ceremony</div>
+      <a class="card" href="https://a.co/d/9qAHlNl" target="_blank">Triple Gem Ceremony<br><small>Linked to Will’s modern Dharma book for young seekers – practical Buddhist wisdom in a fresh voice.</small></a>
     </div>
   </section>
 
@@ -66,20 +52,12 @@
   <section id="websites">
     <h2 class="section-title">Websites I’ve Created</h2>
     <div class="cards">
-      <a class="card" href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank">
-        Temple Meditation Trail<br><small>Interactive guide to the Fo Guang Shan walking trail</small>
-      </a>
-      <a class="card" href="https://92williamgarcia.github.io/LVPPS/" target="_blank">
-        Portable Power Supply Site<br><small>Product overview, image gallery, and demo video</small>
-      </a>
-      <div class="card">
-        <h3>ZephSec AI Dashboard</h3>
-        <p>A security-focused AI tool with real-time threat logs, animated UI, and report generation features.</p>
-      </div>
-      <div class="card">
-        <h3>Silent Harvester</h3>
-        <p>A GPT-powered backend system that extracts structure from chaotic inputs like thoughts, data, and content for deep productivity workflows.</p>
-      </div>
+      <a class="card" href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank">Temple Meditation Trail<br><small>Interactive guide to the Fo Guang Shan walking trail</small></a>
+      <a class="card" href="https://92williamgarcia.github.io/LVPPS/" target="_blank">Portable Power Supply Site<br><small>Product overview, image gallery, and demo video</small></a>
+      <a class="card" href="https://westcoastconnectedinc.com/" target="_blank">West Coast Connected – Electrical Services</a>
+      <a class="card" href="https://92williamgarcia.github.io" target="_blank">Will Garcia – Portfolio & Projects</a>
+      <div class="card"><h3>ZephSec AI Dashboard</h3><p>A security-focused AI tool with real-time threat logs, animated UI, and report generation features.</p></div>
+      <div class="card"><h3>Silent Harvester</h3><p>A GPT-powered backend system that extracts structure from chaotic inputs like thoughts, data, and content for deep productivity workflows.</p></div>
     </div>
   </section>
 
@@ -92,7 +70,7 @@
     <div class="social-links">
       <a href="https://www.linkedin.com/in/william-garcia-058b6297" target="_blank">LinkedIn</a>
       <a href="https://www.instagram.com/w69420" target="_blank">Instagram</a>
-      <a href="mailto:william.garcia@tranetechnologies.com">Email Me</a>
+      <a href="https://westcoastconnectedinc.com" target="_blank">Visit My Electrical Business</a>
     </div>
   </footer>
 
