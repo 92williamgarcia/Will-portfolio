@@ -16,8 +16,18 @@
       scroll-behavior: smooth;
       transition: background 1.5s ease-in-out;
     }
+    .vibe-lightshow {
+      animation: hueShift 20s infinite linear;
+    }
+    @keyframes hueShift {
+      0% { background: radial-gradient(circle at center, #0e0e0e 0%, #1CE783 60%, #121212 100%); }
+      25% { background: radial-gradient(circle at center, #0e0e0e 0%, #3B82F6 60%, #121212 100%); }
+      50% { background: radial-gradient(circle at center, #0e0e0e 0%, #F59E0B 60%, #121212 100%); }
+      75% { background: radial-gradient(circle at center, #0e0e0e 0%, #EF4444 60%, #121212 100%); }
+      100% { background: radial-gradient(circle at center, #0e0e0e 0%, #1CE783 60%, #121212 100%); }
+    }
     header {
-      background: #121212;
+      background: transparent;
       height: 90vh;
       display: flex;
       flex-direction: column;
@@ -124,25 +134,11 @@
     </div>
   </section>
 
-  <section id="ai-agents">
-    <h2 class="section-title">AI Agent Design Portfolio</h2>
-    <div class="cards">
-      <div class="card"><h3>Smart Assistant Bot</h3><p>Automates FAQs and workflows using GPT + Python + Zapier.</p></div>
-      <div class="card"><h3>Instagram Auto Poster</h3><p>AI-generated quote graphics, emotion analysis, and auto-reply logic.</p></div>
-      <div class="card"><h3>HVAC Report Generator</h3><p>Pulls BAS data and builds reports using AI templating tools.</p></div>
-      <div class="card"><h3>Voice-Activated Tech Agent</h3><p>Custom Tracer SC+ voice interface for live system controls.</p></div>
-    </div>
-  </section>
-
   <section id="websites">
     <h2 class="section-title">Websites I’ve Created</h2>
     <div class="cards">
-      <a class="card" href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank">Temple Meditation Trail<br><small>Interactive guide to the Fo Guang Shan walking trail</small></a>
-      <a class="card" href="https://92williamgarcia.github.io/LVPPS/" target="_blank">Portable Power Supply Site<br><small>Product overview, image gallery, and demo video</small></a>
       <a class="card" href="https://westcoastconnectedinc.com/" target="_blank">West Coast Connected – Electrical Services</a>
-      <a class="card" href="https://92williamgarcia.github.io" target="_blank">Will Garcia – Portfolio & Projects</a>
-      <div class="card"><h3>ZephSec AI Dashboard</h3><p>A security-focused AI tool with real-time threat logs, animated UI, and report generation features.</p></div>
-      <div class="card"><h3>Silent Harvester</h3><p>A GPT-powered backend system that extracts structure from chaotic inputs like thoughts, data, and content for deep productivity workflows.</p></div>
+      <a class="card" href="https://92williamgarcia.github.io/Will-portfolio/" target="_blank">Will Garcia – Portfolio & Projects</a>
     </div>
   </section>
 
@@ -171,18 +167,13 @@
       if (playing) {
         music.pause();
         vibeToggle.textContent = 'VIBE OUT';
-        document.body.style.background = 'radial-gradient(circle at center, #0e0e0e 0%, #121212 100%)';
+        document.body.classList.remove("vibe-lightshow");
       } else {
         music.play().catch(e => console.log('Playback blocked:', e));
         vibeToggle.textContent = 'PAUSE VIBE';
+        document.body.classList.add("vibe-lightshow");
       }
       playing = !playing;
-    });
-
-    // Subtle lightshow scroll effect
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY % 255;
-      document.body.style.background = `radial-gradient(circle at center, #0e0e0e 0%, rgb(${scrollY},255,200) 60%, #121212 100%)`;
     });
   </script>
 </body>
