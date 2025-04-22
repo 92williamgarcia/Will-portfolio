@@ -113,21 +113,21 @@
       width: 150px;
       opacity: 0;
       z-index: 98;
-      transition: opacity 4s ease-in-out;
       pointer-events: none;
+      transition: opacity 4s ease-in-out;
     }
     .vibe-lightshow #buddha-overlay {
-      opacity: 0.3;
-      animation: buddhaPulse 10s infinite alternate ease-in-out;
+      opacity: 0.35;
+      animation: buddhaFade 8s infinite alternate ease-in-out;
     }
-    @keyframes buddhaPulse {
+    @keyframes buddhaFade {
       from { opacity: 0.1; }
       to { opacity: 0.35; }
     }
     .vibe-lightshow {
-      animation: hueShift 20s infinite linear;
+      animation: colorShift 20s infinite linear;
     }
-    @keyframes hueShift {
+    @keyframes colorShift {
       0% { background: radial-gradient(circle at center, #0e0e0e 0%, #1CE783 60%, #121212 100%); }
       25% { background: radial-gradient(circle at center, #0e0e0e 0%, #3B82F6 60%, #121212 100%); }
       50% { background: radial-gradient(circle at center, #0e0e0e 0%, #F59E0B 60%, #121212 100%); }
@@ -136,8 +136,8 @@
     }
 </style>
 </head>
-<body class="">
-  <audio id="vibe-music" src="secret-garden.mp3" preload="auto" loop></audio>
+<body>
+  <audio id="vibe-audio" src="secret-garden.mp3" preload="auto" loop></audio>
   <button id="vibe-toggle" class="btn">VIBE OUT</button>
   <img id="buddha-overlay" src="buddha-overlay.png" alt="Buddha Overlay" />
 
@@ -220,19 +220,20 @@
   </script>
 
   <script>
-    const vibeToggle = document.getElementById('vibe-toggle');
-    const vibeMusic = document.getElementById('vibe-music');
+    const vibeToggle = document.getElementById("vibe-toggle");
+    const audio = document.getElementById("vibe-audio");
     let vibeOn = false;
 
-    vibeToggle.addEventListener('click', () => {
-      if (vibeOn) {
-        vibeMusic.pause();
-        vibeToggle.textContent = 'VIBE OUT';
-        document.body.classList.remove("vibe-lightshow");
+    vibeToggle.addEventListener("click", () => {
+      if (!vibeOn) {
+        audio.play().then(() => {
+          document.body.classList.add("vibe-lightshow");
+          vibeToggle.textContent = "PAUSE VIBE";
+        }).catch(e => console.log("Playback blocked:", e));
       } else {
-        vibeMusic.play().catch(e => console.log("Playback blocked:", e));
-        vibeToggle.textContent = 'PAUSE VIBE';
-        document.body.classList.add("vibe-lightshow");
+        audio.pause();
+        document.body.classList.remove("vibe-lightshow");
+        vibeToggle.textContent = "VIBE OUT";
       }
       vibeOn = !vibeOn;
     });
