@@ -116,7 +116,7 @@
       pointer-events: none;
       transition: opacity 4s ease-in-out;
     }
-    .vibe-lightshow #buddha-overlay {
+    .zen-lightshow #buddha-overlay {
       opacity: 0.35;
       animation: buddhaFade 8s infinite alternate ease-in-out;
     }
@@ -124,7 +124,7 @@
       from { opacity: 0.1; }
       to { opacity: 0.35; }
     }
-    .vibe-lightshow {
+    .zen-lightshow {
       animation: colorShift 20s infinite linear;
     }
     @keyframes colorShift {
@@ -137,8 +137,8 @@
 </style>
 </head>
 <body>
-  <audio id="vibe-audio" src="secret-garden.mp3" preload="auto" loop></audio>
-  <button id="vibe-toggle" class="btn">VIBE OUT</button>
+  <audio id="zen-audio" src="zen-mode.mp3" preload="auto" loop></audio>
+  <button id="zen-toggle" class="btn">ZEN MODE</button>
   <img id="buddha-overlay" src="buddha-overlay.png" alt="Buddha Overlay" />
 
   <header>
@@ -220,22 +220,22 @@
   </script>
 
   <script>
-    const vibeToggle = document.getElementById("vibe-toggle");
-    const audio = document.getElementById("vibe-audio");
-    let vibeOn = false;
+    const zenBtn = document.getElementById("zen-toggle");
+    const zenAudio = document.getElementById("zen-audio");
+    let zenOn = false;
 
-    vibeToggle.addEventListener("click", () => {
-      if (!vibeOn) {
-        audio.play().then(() => {
-          document.body.classList.add("vibe-lightshow");
-          vibeToggle.textContent = "PAUSE VIBE";
+    zenBtn.addEventListener("click", () => {
+      if (!zenOn) {
+        zenAudio.play().then(() => {
+          document.body.classList.add("zen-lightshow");
+          zenBtn.textContent = "PAUSE ZEN";
         }).catch(e => console.log("Playback blocked:", e));
       } else {
-        audio.pause();
-        document.body.classList.remove("vibe-lightshow");
-        vibeToggle.textContent = "VIBE OUT";
+        zenAudio.pause();
+        document.body.classList.remove("zen-lightshow");
+        zenBtn.textContent = "ZEN MODE";
       }
-      vibeOn = !vibeOn;
+      zenOn = !zenOn;
     });
   </script>
 </body>
