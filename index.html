@@ -18,7 +18,6 @@
     h1, h2, h3 { color: #1CE783; text-shadow: 0 0 10px #1CE783; }
     h2.section-title { border-left: 4px solid #1CE783; padding-left: 10px; }
     .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
-    #music-toggle { position: fixed; bottom: 20px; right: 20px; z-index: 99; }
   </style>
 </head>
 <body>
@@ -74,26 +73,22 @@
     </div>
   </footer>
 
-  <audio id="bg-music" src="bg-music.mp3" preload="auto" loop></audio>
-  <button id="music-toggle" class="btn">Play Music</button>
-  <a href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank" class="btn link-btn">Temple Trail</a>
+  <audio id="netflix-sound" src="netflix-sound.mp3" preload="auto"></audio>
 
   <script>
-    const music = document.getElementById('bg-music');
-    const toggle = document.getElementById('music-toggle');
-    let isPlaying = false;
+    const tudum = document.getElementById('netflix-sound');
 
-    toggle.addEventListener('click', () => {
-      if (isPlaying) {
-        music.pause();
-        toggle.textContent = 'Play Music';
-        toggle.style.backgroundColor = '#1CE783';
-      } else {
-        music.play().catch(e => console.log('Playback blocked:', e));
-        toggle.textContent = 'Pause Music';
-        toggle.style.backgroundColor = '#0e0e0e';
-      }
-      isPlaying = !isPlaying;
+    // Play sound on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      tudum.play().catch(e => console.log("Autoplay blocked on load"));
+    });
+
+    // Play sound on any hyperlink click
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        tudum.currentTime = 0;
+        tudum.play().catch(e => console.log("Autoplay blocked on click"));
+      });
     });
   </script>
 </body>
