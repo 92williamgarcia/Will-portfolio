@@ -14,28 +14,43 @@
       background: radial-gradient(circle at center, #0e0e0e 0%, #121212 100%);
       color: #ffffff;
       scroll-behavior: smooth;
-      transition: background 2s ease-in-out;
+      transition: background 1.5s ease-in-out;
     }
-    header, section, footer { padding: 60px 40px; }
-    .btn, .card {
-      background: #181818;
-      border: none;
-      border-radius: 10px;
-      padding: 20px;
-      color: white;
-      box-shadow: 0 0 10px rgba(28, 231, 131, 0.2);
-      transition: all 0.2s;
-      text-align: center;
+    header {
+      background: #121212;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px;
     }
-    .btn:hover, .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #1CE783;
+    .header-content { z-index: 2; }
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #1CE783;
+      text-shadow: 0 0 20px #1CE783;
+    }
+    p.subtitle {
+      margin-top: 10px;
+      font-size: 1.3rem;
+      color: #ccc;
     }
     .btn {
-      margin: 20px;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: #1CE783;
       color: #121212;
+      border: none;
+      cursor: pointer;
       font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 10px #1CE783;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #1CE783;
     }
     #vibe-toggle {
       position: fixed;
@@ -48,26 +63,57 @@
       border: 2px solid #1CE783;
       box-shadow: 0 0 10px #1CE783;
     }
-    h1, h2, h3 {
-      color: #1CE783;
-      text-shadow: 0 0 10px #1CE783;
+    section {
+      padding: 60px 40px;
     }
     h2.section-title {
+      margin-bottom: 30px;
+      font-size: 2rem;
       border-left: 4px solid #1CE783;
       padding-left: 10px;
+      color: #1CE783;
+      text-shadow: 0 0 10px #1CE783;
     }
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 25px;
     }
+    .card {
+      background: #181818;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(28, 231, 131, 0.2);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #1CE783;
+    }
+    footer {
+      padding: 30px;
+      text-align: center;
+      background-color: #181818;
+    }
+    .social-links a {
+      margin: 0 15px;
+      color: #1CE783;
+      text-decoration: none;
+      font-weight: 600;
+      text-shadow: 0 0 5px #1CE783;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>WILL GARCIA</h1>
-    <p class="subtitle">Creator. Leader. Rebuilder. Tech & Heart Combined.</p>
-    <button class="btn" onclick="document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });">Explore My Journey</button>
+    <div class="header-content">
+      <h1>WILL GARCIA</h1>
+      <p class="subtitle">Creator. Leader. Rebuilder. Tech & Heart Combined.</p>
+      <button class="btn" onclick="document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });">Explore My Journey</button>
+    </div>
   </header>
 
   <section id="featured">
@@ -75,9 +121,34 @@
     <div class="cards">
       <a class="card" href="https://a.co/d/bZ2eckm" target="_blank">The Will to Heal (Book)</a>
       <a class="card" href="https://a.co/d/9qAHlNl" target="_blank">Triple Gem Ceremony<br><small>Linked to Will’s modern Dharma book for young seekers</small></a>
+    </div>
+  </section>
+
+  <section id="ai-agents">
+    <h2 class="section-title">AI Agent Design Portfolio</h2>
+    <div class="cards">
+      <div class="card"><h3>Smart Assistant Bot</h3><p>Automates FAQs and workflows using GPT + Python + Zapier.</p></div>
+      <div class="card"><h3>Instagram Auto Poster</h3><p>AI-generated quote graphics, emotion analysis, and auto-reply logic.</p></div>
+      <div class="card"><h3>HVAC Report Generator</h3><p>Pulls BAS data and builds reports using AI templating tools.</p></div>
+      <div class="card"><h3>Voice-Activated Tech Agent</h3><p>Custom Tracer SC+ voice interface for live system controls.</p></div>
+    </div>
+  </section>
+
+  <section id="websites">
+    <h2 class="section-title">Websites I’ve Created</h2>
+    <div class="cards">
+      <a class="card" href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank">Temple Meditation Trail<br><small>Interactive guide to the Fo Guang Shan walking trail</small></a>
+      <a class="card" href="https://92williamgarcia.github.io/LVPPS/" target="_blank">Portable Power Supply Site<br><small>Product overview, image gallery, and demo video</small></a>
       <a class="card" href="https://westcoastconnectedinc.com/" target="_blank">West Coast Connected – Electrical Services</a>
       <a class="card" href="https://92williamgarcia.github.io" target="_blank">Will Garcia – Portfolio & Projects</a>
+      <div class="card"><h3>ZephSec AI Dashboard</h3><p>A security-focused AI tool with real-time threat logs, animated UI, and report generation features.</p></div>
+      <div class="card"><h3>Silent Harvester</h3><p>A GPT-powered backend system that extracts structure from chaotic inputs like thoughts, data, and content for deep productivity workflows.</p></div>
     </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">About Me</h2>
+    <p>I'm Will Garcia—Senior Controls Tech, AI workflow architect, and creative systems builder. With a deep background in BAS and a passion for generative AI, I design intelligent systems that optimize tech and amplify human impact. From HVAC logic to AI-powered social automation, my work fuses precision with purpose.</p>
   </section>
 
   <footer>
@@ -104,12 +175,11 @@
       } else {
         music.play().catch(e => console.log('Playback blocked:', e));
         vibeToggle.textContent = 'PAUSE VIBE';
-        document.body.style.background = 'radial-gradient(circle at center, #0e0e0e 0%, #1CE783 60%, #121212 100%)';
       }
       playing = !playing;
     });
 
-    // Subtle lightshow as you scroll
+    // Subtle lightshow scroll effect
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY % 255;
       document.body.style.background = `radial-gradient(circle at center, #0e0e0e 0%, rgb(${scrollY},255,200) 60%, #121212 100%)`;
