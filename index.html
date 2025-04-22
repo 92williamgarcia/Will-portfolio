@@ -124,9 +124,19 @@
       from { opacity: 0.1; }
       to { opacity: 0.35; }
     }
+    .vibe-lightshow {
+      animation: hueShift 20s infinite linear;
+    }
+    @keyframes hueShift {
+      0% { background: radial-gradient(circle at center, #0e0e0e 0%, #1CE783 60%, #121212 100%); }
+      25% { background: radial-gradient(circle at center, #0e0e0e 0%, #3B82F6 60%, #121212 100%); }
+      50% { background: radial-gradient(circle at center, #0e0e0e 0%, #F59E0B 60%, #121212 100%); }
+      75% { background: radial-gradient(circle at center, #0e0e0e 0%, #EF4444 60%, #121212 100%); }
+      100% { background: radial-gradient(circle at center, #0e0e0e 0%, #1CE783 60%, #121212 100%); }
+    }
 </style>
 </head>
-<body>
+<body class="">
   <audio id="vibe-music" src="secret-garden.mp3" preload="auto" loop></audio>
   <button id="vibe-toggle" class="btn">VIBE OUT</button>
   <img id="buddha-overlay" src="buddha-overlay.png" alt="Buddha Overlay" />
@@ -212,17 +222,18 @@
   <script>
     const music = document.getElementById('vibe-music');
     const vibeToggle = document.getElementById('vibe-toggle');
+    const body = document.body;
     let playing = false;
 
     vibeToggle.addEventListener('click', () => {
       if (playing) {
         music.pause();
         vibeToggle.textContent = 'VIBE OUT';
-        document.body.classList.remove("vibe-lightshow");
+        body.classList.remove('vibe-lightshow');
       } else {
         music.play().catch(e => console.log('Playback blocked:', e));
         vibeToggle.textContent = 'PAUSE VIBE';
-        document.body.classList.add("vibe-lightshow");
+        body.classList.add('vibe-lightshow');
       }
       playing = !playing;
     });
