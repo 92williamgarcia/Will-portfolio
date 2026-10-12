@@ -88,10 +88,23 @@
       color: white;
       text-align: center;
       box-shadow: 0 0 10px rgba(28, 231, 131, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 150px;
     }
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 25px #1CE783;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
     footer {
       padding: 30px;
@@ -153,7 +166,7 @@
     <h2 class="section-title">Featured Work</h2>
     <div class="cards">
       <a class="card" href="https://a.co/d/bZ2eckm" target="_blank">The Will to Heal (Book)</a>
-      <a class="card" href="https://a.co/d/9qAHlNl" target="_blank">Triple Gem Ceremony<br><small>Linked to Will’s modern Dharma book for young seekers</small></a>
+      <a class="card" href="https://a.co/d/9qAHlNl" target="_blank">Triple Gem Ceremony<br><small>Linked to Will's modern Dharma book for young seekers</small></a>
     </div>
   </section>
 
@@ -168,12 +181,12 @@
   </section>
 
   <section id="websites">
-    <h2 class="section-title">Websites I’ve Created</h2>
+    <h2 class="section-title">Websites I've Created</h2>
     <div class="cards">
-      <a class="card" href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank">Temple Meditation Trail<br><small>Interactive guide to the Fo Guang Shan wal[...]
-      <a class="card" href="https://92williamgarcia.github.io/LVPPS/" target="_blank">Portable Power Supply Site<br><small>Product overview, image gallery, and demo video</small></a>
-      <a class="card" href="https://westcoastconnectedinc.com/" target="_blank">West Coast Connected – Electrical Services</a>
-      <a class="card" href="./William_Garcia_Dev_Engagement_Resume.pdf" target="_blank">Will Garcia – Portfolio & Projects</a>
+      <a class="card" href="https://68067d07496a5e6058f96a8d--meditationtrailfoguangshantemple.netlify.app" target="_blank"><h3>Temple Meditation Trail</h3><p>Interactive guide to the Fo Guang Shan walking trail</p></a>
+      <a class="card" href="https://92williamgarcia.github.io/LVPPS/" target="_blank"><h3>Portable Power Supply Site</h3><p>Product overview, image gallery, and demo video</p></a>
+      <a class="card" href="https://westcoastconnectedinc.com/" target="_blank"><h3>West Coast Connected</h3><p>Electrical Services</p></a>
+      <a class="card" href="./William_Garcia_Dev_Engagement_Resume.pdf" target="_blank"><h3>Will Garcia – Portfolio & Projects</h3><p>Resume and professional development</p></a>
       <div class="card"><h3>ZephSec AI Dashboard</h3><p>A security-focused AI tool with real-time threat logs, animated UI, and report generation features.</p></div>
       <div class="card"><h3>Silent Harvester</h3><p>A GPT-powered backend system that extracts structure from chaotic inputs like thoughts, data, and content for deep productivity workflows.</p></div>
     </div>
